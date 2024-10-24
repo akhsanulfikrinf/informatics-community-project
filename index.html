@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Komunitas Mahasiswa</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      /* Navbar Start */
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        overflow: hidden;
+        border-bottom: 1px solid;
+      }
+
+      .navbar .logo {
+        width: 50px;
+        height: 50px;
+        margin: 0 20px;
+        flex-shrink: 0;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-grow: 1;
+      }
+
+      .nav-links a {
+        display: inline-block;
+        color: #f2f2f2;
+        font-family: sofia-pro, sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        text-align: center;
+        padding: 20px 8px;
+        margin-left: 30px;
+        text-decoration: none;
+        font-size: 18px;
+      }
+
+      .nav-links a:after {
+        content: "";
+        width: 0px;
+        height: 2px;
+        display: block;
+        background: white;
+        transition: 0.7s;
+      }
+
+      .nav-links a:hover:after {
+        width: 100%;
+      }
+
+      .nav-links .icon {
+        display: none;
+      }
+
+      .hbg-trigger {
+        display: none;
+      }
+
+      @media screen and (max-width: 600px) {
+        .nav-links {
+          display: none;
+        }
+        .nav-links .icon {
+          display: block;
+        }
+
+        .navbar.responsive .nav-links {
+          display: block;
+          text-align: left;
+        }
+
+        .navbar.responsive .nav-links .icon {
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+
+        .navbar.responsive .logo {
+          order: -1;
+        }
+
+        .hbg-trigger {
+          display: block;
+          color: white;
+          font-size: 18px;
+          text-align: center;
+          padding: 5px 0px;
+        }
+      }
+
+      /* Navbar End */
+
+      .bg-img {
+        padding: 10px 2px;
+        color: white;
+        position: relative;
+        z-index: 2;
+      }
+
+      .bg-img:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)
+          ),
+          url(univ.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+      }
+
+      .header {
+        position: relative;
+        z-index: 1;
+        word-break: break-all;
+      }
+
+      .header .header-1 {
+        font-family: proxima-nova, sans-serif;
+        font-style: normal;
+        padding-top: 50px;
+        padding-bottom: 160px;
+        padding-left: 100px;
+        width: 440px;
+      }
+
+      .header .header-1 h1 {
+        font-weight: 800;
+        font-size: 56px;
+      }
+
+      @media screen and (max-width: 600px) {
+        .header .header-1 {
+          padding: 10px;
+          margin-top: 0;
+        }
+
+        .header-1 h2 {
+          font-size: 28px;
+        }
+
+        .header-1 p {
+          font-size: 16px;
+        }
+      }
+
+      .join-btn {
+        padding: 8px;
+        margin-right: 10px;
+        border: 2px solid;
+        color: white;
+        text-decoration: none;
+        border-radius: 25px;
+      }
+
+      .join-btn:hover {
+        color: chocolate;
+        transition: 0.4s;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <div class="bg-img">
+      <div class="header">
+        <div class="navbar" id="myNavbar">
+          <img src="logo.png" alt="logo" class="logo" />
+          <div class="nav-links">
+            <a href="#" >Home</a>
+            <a href="#">Contact</a>
+            <a href="#">Project</a>
+            <a href="javascript:void(0)" class="icon" onclick="myFunction()"
+              ><i class="fa fa-bars"></i
+            ></a>
+          </div>
+        </div>
+        <h3 class="hbg-trigger">Selamat Datang</h3>
+
+        <div class="header-1">
+          <h1>INFORMATICS COMMUNITY</h1>
+          <a href="login.html" class="join-btn">LOGIN</a>
+          <a href="login.html" class="join-btn">REGISTER</a>
+        </div>
+
+        <div></div>
+      </div>
+    </div>
+
+    <!-- Konten -->
+    <div class="content"></div>
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myNavbar");
+        if (x.className === "navbar") {
+          x.className += " responsive";
+        } else {
+          x.className = "navbar";
+        }
+      }
+    </script>
+  </body>
+</html>
