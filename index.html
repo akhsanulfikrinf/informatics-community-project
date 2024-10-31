@@ -62,7 +62,7 @@
         width: 100%;
       }
 
-      .nav-links .icon {
+      .navbar .icon {
         display: none;
       }
 
@@ -74,16 +74,18 @@
         .nav-links {
           display: none;
         }
-        .nav-links .icon {
+        .navbar .icon {
           display: block;
+          cursor: pointer;
+          color: white;
         }
 
         .navbar.responsive .nav-links {
-          display: block;
-          text-align: left;
+          display: flex;
+          flex-direction: column;
         }
 
-        .navbar.responsive .nav-links .icon {
+        .navbar.responsive .navbar .icon {
           position: absolute;
           top: 0;
           right: 0;
@@ -186,21 +188,20 @@
       <div class="header">
         <div class="navbar" id="myNavbar">
           <img src="logo.png" alt="logo" class="logo" />
+          <a href="javascript:void(0)" class="icon" onclick="myFunction()"
+            ><i class="fa fa-bars"></i
+          ></a>
           <div class="nav-links">
-            <a href="#" >Home</a>
+            <a href="#">Home</a>
             <a href="#">Contact</a>
             <a href="#">Project</a>
-            <a href="javascript:void(0)" class="icon" onclick="myFunction()"
-              ><i class="fa fa-bars"></i
-            ></a>
           </div>
         </div>
         <h3 class="hbg-trigger">Selamat Datang</h3>
 
         <div class="header-1">
           <h1>INFORMATICS COMMUNITY</h1>
-          <a href="login.html" class="join-btn">LOGIN</a>
-          <a href="login.html" class="join-btn">REGISTER</a>
+          <a href="login.html" class="join-btn">SIGN IN OR SIGN UP</a>
         </div>
 
         <div></div>
@@ -219,6 +220,14 @@
           x.className = "navbar";
         }
       }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        if (window.location.hash === "#pills-register") {
+          const registerTab = document.getElementById("tab-register");
+          const registerPane = new bootstrap.Tab(registerTab);
+          registerPane.show();
+        }
+      });
     </script>
   </body>
 </html>
